@@ -1,0 +1,19 @@
+import fetch  from 'node-fetch';
+// const fetch = require('node-fetch')
+import { parseString } from 'xml2js';
+// const {parseString} = require('xml2js');
+fetch('https://news.google.com/rss/search?q=hi&hl=en-IN&gl=IN&ceid=IN:en',{
+  method:'GET',
+  headers: {'Content-Type': 'text/xml'}
+}).then(res => {
+  return res.text();
+}).then((restext) => {
+// console.log(restext)
+var xmldata = restext;
+parseString(xmldata, function(err, result) {
+   var data = JSON.stringify(result)
+   console.log("first")
+   console.log(data)
+    
+})
+}).catch(err => console.log(err))

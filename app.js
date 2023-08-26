@@ -7,11 +7,14 @@ import express  from 'express';
 // import mysql from 'mysql'
 const app = express();
 import http  from 'http';
+import cors from 'cors';
 // import  {Jwt_secret}  from "./key.js";
 import con from './models/connection.js';
 const http1 = http.Server(app)
 import  user_route  from './routes/uswrRoute.js';
-
+app.use(cors({
+    origin:'*',
+}))
 // var con = mysql.createConnection({
 //     host: "localhost",
 //     user: "root",

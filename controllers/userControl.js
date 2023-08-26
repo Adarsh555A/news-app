@@ -215,7 +215,7 @@ const loaddashboard = async (req, res) => {
 
                     // });
                     if (datasend.length === 9) {
-                      res.send(datasend)
+                      res.json(datasend)
 
                     }
 
@@ -382,8 +382,8 @@ const indiatoday = async (req, res) => {
               // console.log(datalen.length)
               if (datasend.length === datalen.length || datasend.length === 20) {
                 // console.log(datasend.length)
-
-                res.send(datasend)
+                
+              return res.json(datasend)
 
 
 
